@@ -91,17 +91,19 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        // $job=Jobs::leftJoin('user_jobs','user_jobs.job_id','=','jobs.id')->where('jobs.id',$id)->first();
-        $job= Jobs::find($id);
-        // $job->hasRequest = false;
+        $job=Jobs::leftJoin('user_jobs','user_jobs.job_id','=','jobs.id')->where('jobs.id',$id)->first();
         
-        // if($job->user_id==Auth::user()->id){
-        //     $job->hasRequest = true;
-        // }
+        // $job= Jobs::find($id);
+        $job->hasRequest = false;
+        
+        if($job->user_id==Auth::user()->id){
+            $job->hasRequest = true;
+        }
 
         $status=UserJob::where('status','0');
         
 
+        
         return view('user.user_job',compact('job','status'));
     }
 
