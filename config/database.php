@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION', 'pgsql'),
+    'default' => env('DB_CONNECTION', 'mysql'),
 
     /*
     |--------------------------------------------------------------------------
@@ -54,18 +54,18 @@ return [
             'engine' => null,
         ],
 
-        'pgsql' => [
-            'driver' => 'pgsql',
-            'host' => env('DB_HOST', 'ec2-54-225-72-238.compute-1.amazonaws.com'),
-            'port' => env('DB_PORT', '5432'),
-            'database' => env('DB_DATABASE', 'd4kg303qokl2v5'),
-            'username' => env('DB_USERNAME', 'umxpgbwtyttehc'),
-            'password' => env('DB_PASSWORD', 'fb125870f9e5ee0052bafa208dc63743284315c526d4f78bd29c63d5986c11f3'),
-            'charset' => 'utf8',
-            'prefix' => '',
-            'schema' => 'public',
-            'sslmode' => 'require',
-        ],
+        // 'pgsql' => [
+        //     'driver' => 'pgsql',
+        //     'host' => env('DB_HOST', 'ec2-54-225-72-238.compute-1.amazonaws.com'),
+        //     'port' => env('DB_PORT', '5432'),
+        //     'database' => env('DB_DATABASE', 'd4kg303qokl2v5'),
+        //     'username' => env('DB_USERNAME', 'umxpgbwtyttehc'),
+        //     'password' => env('DB_PASSWORD', 'fb125870f9e5ee0052bafa208dc63743284315c526d4f78bd29c63d5986c11f3'),
+        //     'charset' => 'utf8',
+        //     'prefix' => '',
+        //     'schema' => 'public',
+        //     'sslmode' => 'require',
+        // ],
 
         'sqlsrv' => [
             'driver' => 'sqlsrv',

@@ -16,6 +16,25 @@ class ExampleTest extends TestCase
     {
         $response = $this->get('/');
 
+        $response->assertSee('Laravel');
+    }
+
+    // important  step 
+    /** @test */
+    public function about_route_return_something()
+    {
+        $response = $this->get('/about');
+        // dd($response);
+        $response->assertStatus(200);
+        
+    }
+    /** @test */
+    public function contact_on_route_return_something(){
+        $response = $this->get('/contact');
+
         $response->assertStatus(200);
     }
+
+    // running : vendor/bin/phpunit or phpunit app/tests/
+
 }

@@ -11,22 +11,31 @@ class HomeController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
+    // public function __construct()
+    // {
+    //     $this->middleware('auth');
+       
+    //     // $this->middleware('role:manager,employee');
+    // }
 
     /**
      * Show the application dashboard.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+        if ($request->user()->hasRole('admin')) {
+            # code...
+            return redirect('admin');
+        }elseif($request->user()->hasRole('user')){
+            return redirect('user');
+        }
         return view('home');
     }
 
-    public function view(){
+    public function view()
+    {
         return view('view');
     }
 }

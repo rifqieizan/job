@@ -39,6 +39,34 @@
                             </div>
                         </div>
 
+                        <div class="form-group{{ $errors->has('address') ? ' has-error' : '' }}">
+                                <label for="address" class="col-md-4 control-label">Adress</label>
+    
+                                <div class="col-md-6">
+                                    <input id="address" type="address" class="form-control" name="address" value="{{ old('address') }}" required>
+    
+                                    @if ($errors->has('address'))
+                                        <span class="help-block">
+                                            <strong>{{ $errors->first('address') }}</strong>
+                                        </span>
+                                    @endif
+                                </div>
+                            </div>
+
+                            <div class="form-group{{ $errors->has('birth') ? ' has-error' : '' }}">
+                                    <label for="birth" class="col-md-4 control-label">birth (After 5-24-2002)</label>
+        
+                                    <div class="col-md-6">
+                                        <input id="birth" type="date" class="form-control" name="birth" value="{{ old('birth') }}" required>
+        
+                                        @if ($errors->has('birth'))
+                                            <span class="help-block">
+                                                <strong>{{ $errors->first('birth') }}</strong>
+                                            </span>
+                                        @endif
+                                    </div>
+                            </div>
+
                         <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                             <label for="password" class="col-md-4 control-label">Password</label>
 
